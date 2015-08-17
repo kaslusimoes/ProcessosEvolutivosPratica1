@@ -1,9 +1,9 @@
 using DataFrames
 
-df1 = readtable("cenario1.csv");
-df2 = readtable("cenario2.csv");
-df3 = readtable("cenario3.csv");
-df4 = readtable("cenario4.csv");
+df1 = readtable("dados/cenario1.csv");
+df2 = readtable("dados/cenario2.csv");
+df3 = readtable("dados/cenario3.csv");
+df4 = readtable("dados/cenario4.csv");
 
 eval(parse(df1[1, 1]))
 df1_means = [sum(df1[i] / N)/35 for i in 3:15]
@@ -38,7 +38,7 @@ xlabel("Gerações")
 ylabel("Frequência de Indivíduos Marrons")
 legend(loc="upper left")
 ylim(0.2, 0.8)
-savefig("mean_freq_allele.png")
+savefig("graficos/mean_freq_allele.png")
 close()
 
 # PLOT DAS VARIÃNCIAS ALÉLICAS MÉDIAS
@@ -51,7 +51,7 @@ xlabel("Gerações")
 ylabel("Variância de Indivíduos Marrons")
 legend(loc="upper left")
 # ylim(0.2, 0.8)
-savefig("mean_var_allele.png")
+savefig("graficos/mean_var_allele.png")
 close()
 
 # PLOT DAS TAXAS DE HETEROZIGOSE MÉDIAS
@@ -64,5 +64,5 @@ xlabel("Gerações")
 ylabel("Taxa de Heterozigose")
 legend(loc="upper right")
 # ylim(0.2, 0.8)
-savefig("mean_heterozigose.png")
+savefig("graficos/mean_heterozigose.png")
 close()
